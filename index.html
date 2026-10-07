@@ -381,7 +381,7 @@ textarea{resize:none}
     <label class="cb"><input type="checkbox" class="tierA" onchange="calcRisk()"> Line Breaking / Pipe Opening</label>
     <label class="cb"><input type="checkbox" class="tierA" onchange="calcRisk()"> Demolition / Structural Modification</label>
     <label class="cb"><input type="checkbox" class="tierA" onchange="calcRisk()"> Work affecting HVAC, compressed air, purified water, or critical utilities</label>
-    <label class="cb"><input type="checkbox" class="tierB" onchange="calcRisk()"> Other (Specify): <input type="text" style="width:110px"></label>
+    <label class="cb"><input type="checkbox" class="tierA" onchange="calcRisk()"> Other (Specify): <input type="text" style="width:110px"></label>
 
   </td>
   <!-- TIER B -->
@@ -441,24 +441,6 @@ function calcRisk(){
   }
 }
 window.addEventListener('load', calcRisk);
-  if(aHit){
-    d.textContent='HIGH';
-    d.style.color='#bf360c';
-    s.innerHTML='<b>Tier A activity detected.</b> Implement mandatory controls &amp; notify SHE-S before work commences.';
-  } else if(bCount>=3){
-    d.textContent='HIGH';
-    d.style.color='#bf360c';
-    s.innerHTML='<b>Multiple hazards present.</b> Implement additional risk controls &amp; notify SHE-S.';
-  } else if(bCount>=1){
-    d.textContent='MEDIUM';
-    d.style.color='#e65100';
-    s.textContent='Tolerable. Ensure standard controls are in place. Monitor periodically.';
-  } else {
-    d.textContent='LOW';
-    d.style.color='#2e7d32';
-    s.textContent='Acceptable. Maintain current controls.';
-  }
-}
 </script>
 
 <!-- FOOTER -->
